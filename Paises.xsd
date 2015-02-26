@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.everis.com/Paises"
+            targetNamespace="http://www.everis.com/Paises"
+            elementFormDefault="qualified">
+  <xsd:element name="clientes">
+    <xsd:complexType>
+      <xsd:sequence>
+        
+              <xsd:element name="Pais" >
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Argentina"/>
+                    <xsd:enumeration value="Brasil"/>
+                    <xsd:enumeration value="Peru"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="Dni" type="xsd:integer"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        
+  </xsd:element>
+  <xsd:element name="egreso">
+    <xsd:complexType>
+      <xsd:sequence>
+        
+              <xsd:element name="Precio" type="xsd:integer"/>
+              <xsd:element name="codPais" type="xsd:string"/>
+            </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

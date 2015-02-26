@@ -12,15 +12,31 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente"
           location="MediatorCliente.wsdl" importType="wsdl"/>
+  <import namespace="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais"
+          location="ServicePais.wsdl" importType="wsdl"/>
   <service name="MediatorCliente_ep" ui:wsdlLocation="MediatorCliente.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.endpoint(MediatorCliente_ep/execute_pt)"/>
   </service>
+  <service name="ServicePais" ui:wsdlLocation="ServicePais.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais#wsdl.interface(execute_ptt)"/>
+    <binding.ws port="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais#wsdl.endpoint(ServicePais/execute_pt)">
+      <property name="weblogic.wsee.wsat.transaction.flowOption"
+                type="xs:string" many="false">NEVER</property>
+    </binding.ws>
+  </service>
   <component name="MediatorCliente">
     <implementation.mediator src="MediatorCliente.mplan"/>
+  </component>
+  <component name="MediatorPaises">
+    <implementation.mediator src="MediatorPaises.mplan"/>
   </component>
   <wire>
     <source.uri>MediatorCliente_ep</source.uri>
     <target.uri>MediatorCliente/MediatorCliente</target.uri>
+  </wire>
+  <wire>
+    <source.uri>ServicePais</source.uri>
+    <target.uri>MediatorPaises/MediatorPaises</target.uri>
   </wire>
 </composite>
