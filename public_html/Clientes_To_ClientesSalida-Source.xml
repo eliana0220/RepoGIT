@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Clientes xmlns="http://www.everis.com/Clientes">
+   <Cliente>
+      <Nombre>Nombre37</Nombre>
+      <Apellido>Apellido38</Apellido>
+      <DNI>DNI39</DNI>
+   </Cliente>
+   <Cliente>
+      <Nombre>Nombre40</Nombre>
+      <Apellido>Apellido41</Apellido>
+      <DNI>DNI42</DNI>
+   </Cliente>
+   <Cliente>
+      <Nombre>Nombre43</Nombre>
+      <Apellido>Apellido44</Apellido>
+      <DNI>DNI45</DNI>
+   </Cliente>
+</Clientes>

@@ -12,52 +12,53 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente"
           location="MediatorCliente.wsdl" importType="wsdl"/>
-<<<<<<< HEAD
+
   <import namespace="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios"
           location="MediatorServicios.wsdl" importType="wsdl"/>
-=======
+
   <import namespace="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais"
           location="ServicePais.wsdl" importType="wsdl"/>
->>>>>>> d94e601b90d27104f164bedd993dc98ebcc23eed
+
   <service name="MediatorCliente_ep" ui:wsdlLocation="MediatorCliente.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.endpoint(MediatorCliente_ep/execute_pt)"/>
   </service>
-<<<<<<< HEAD
+
   <service name="MediatorServicios_ep" ui:wsdlLocation="MediatorServicios.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios#wsdl.endpoint(MediatorServicios_ep/execute_pt)"/>
-=======
+</service>
   <service name="ServicePais" ui:wsdlLocation="ServicePais.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://oracle.com/sca/soapservice/Application1/PruebaOSB/ServicePais#wsdl.endpoint(ServicePais/execute_pt)">
       <property name="weblogic.wsee.wsat.transaction.flowOption"
                 type="xs:string" many="false">NEVER</property>
     </binding.ws>
->>>>>>> d94e601b90d27104f164bedd993dc98ebcc23eed
+
   </service>
   <component name="MediatorCliente">
     <implementation.mediator src="MediatorCliente.mplan"/>
   </component>
-<<<<<<< HEAD
+
   <component name="MediatorServicios">
     <implementation.mediator src="MediatorServicios.mplan"/>
-=======
+</component>
   <component name="MediatorPaises">
     <implementation.mediator src="MediatorPaises.mplan"/>
->>>>>>> d94e601b90d27104f164bedd993dc98ebcc23eed
+
   </component>
   <wire>
     <source.uri>MediatorCliente_ep</source.uri>
     <target.uri>MediatorCliente/MediatorCliente</target.uri>
   </wire>
   <wire>
-<<<<<<< HEAD
+
     <source.uri>MediatorServicios_ep</source.uri>
     <target.uri>MediatorServicios/MediatorServicios</target.uri>
-=======
-    <source.uri>ServicePais</source.uri>
+    </wire>
+    <wire>
+  <source.uri>ServicePais</source.uri>
     <target.uri>MediatorPaises/MediatorPaises</target.uri>
->>>>>>> d94e601b90d27104f164bedd993dc98ebcc23eed
+
   </wire>
 </composite>

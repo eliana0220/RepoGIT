@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<inp1:ClientesSalida xmlns:inp1="http://www.everis.com/Clientes">
+   <inp1:ClienteSalida>
+      <inp1:Nombre>Apellido38 Nombre37</inp1:Nombre>
+      <inp1:DNI>DNI39</inp1:DNI>
+   </inp1:ClienteSalida>
+   <inp1:ClienteSalida>
+      <inp1:Nombre>Apellido41 Nombre40</inp1:Nombre>
+      <inp1:DNI>DNI42</inp1:DNI>
+   </inp1:ClienteSalida>
+   <inp1:ClienteSalida>
+      <inp1:Nombre>Apellido44 Nombre43</inp1:Nombre>
+      <inp1:DNI>DNI45</inp1:DNI>
+   </inp1:ClienteSalida>
+</inp1:ClientesSalida>
