@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.everis.com/Clientes"
+            targetNamespace="http://www.everis.com/Clientes"
+            elementFormDefault="qualified">
+    <xsd:element name="Clientes">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Cliente" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Nombre" type="xsd:string"/>
+                            <xsd:element name="Apellido" type="xsd:string"/>
+                            <xsd:element name="DNI" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="ClientesSalida">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ClienteSalida" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Nombre" type="xsd:string"/>
+                            <xsd:element name="DNI" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
