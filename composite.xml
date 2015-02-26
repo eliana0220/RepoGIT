@@ -12,15 +12,28 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente"
           location="MediatorCliente.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios"
+          location="MediatorServicios.wsdl" importType="wsdl"/>
   <service name="MediatorCliente_ep" ui:wsdlLocation="MediatorCliente.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorCliente#wsdl.endpoint(MediatorCliente_ep/execute_pt)"/>
   </service>
+  <service name="MediatorServicios_ep" ui:wsdlLocation="MediatorServicios.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios#wsdl.interface(execute_ptt)"/>
+    <binding.ws port="http://xmlns.oracle.com/ApplicationPrueba/PruebaOSB/MediatorServicios#wsdl.endpoint(MediatorServicios_ep/execute_pt)"/>
+  </service>
   <component name="MediatorCliente">
     <implementation.mediator src="MediatorCliente.mplan"/>
+  </component>
+  <component name="MediatorServicios">
+    <implementation.mediator src="MediatorServicios.mplan"/>
   </component>
   <wire>
     <source.uri>MediatorCliente_ep</source.uri>
     <target.uri>MediatorCliente/MediatorCliente</target.uri>
+  </wire>
+  <wire>
+    <source.uri>MediatorServicios_ep</source.uri>
+    <target.uri>MediatorServicios/MediatorServicios</target.uri>
   </wire>
 </composite>

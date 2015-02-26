@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.everis.com/ServiciosPorPaises"
+            targetNamespace="http://www.everis.com/ServiciosPorPaises"
+            elementFormDefault="qualified">
+  <xsd:element name="Pais">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Pais">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="AR"/>
+              <xsd:enumeration value="BR"/>
+              <xsd:enumeration value="PE"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="PaisSalida">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Pais" type="xsd:string"/>
+        <xsd:element name="Servicios" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
